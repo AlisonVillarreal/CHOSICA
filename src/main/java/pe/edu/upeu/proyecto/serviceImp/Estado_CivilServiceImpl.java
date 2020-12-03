@@ -5,44 +5,44 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pe.edu.upeu.proyecto.dao.PersonaDao;
-import pe.edu.upeu.proyecto.entity.Persona;
-import pe.edu.upeu.proyecto.service.PersonaService;
+import pe.edu.upeu.proyecto.dao.Estado_CivilDao;
+import pe.edu.upeu.proyecto.entity.Estado_Civil;
+import pe.edu.upeu.proyecto.service.Estado_CivilService;
 
 @Service
-public class PersonaServiceImpl implements PersonaService{
+public class Estado_CivilServiceImpl implements Estado_CivilService {
 
 	@Autowired
-	private PersonaDao personaDao;
+	private Estado_CivilDao estado_CivilDao;
 	
 	@Override
-	public int create(Persona persona) {
+	public int create(Estado_Civil estado_civil) {
 		// TODO Auto-generated method stub
-		return personaDao.create(persona);
+		return estado_CivilDao.create(estado_civil);
 	}
 
 	@Override
-	public int update(Persona persona) {
+	public int update(Estado_Civil estado_civil) {
 		// TODO Auto-generated method stub
-		return personaDao.update(persona);
+		return estado_CivilDao.update(estado_civil);
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return personaDao.delete(id);
+		return estado_CivilDao.delete(id);
 	}
 
 	@Override
 	public Map<String, Object> buscar(int id) {
 		// TODO Auto-generated method stub
-		return personaDao.buscar(id);
+		return estado_CivilDao.buscar(id);
 	}
 
 	@Override
 	public Map<String, Object> listar() {
 		// TODO Auto-generated method stub
-		return personaDao.listar();
+		return estado_CivilDao.listar();
 	}
 
 }
