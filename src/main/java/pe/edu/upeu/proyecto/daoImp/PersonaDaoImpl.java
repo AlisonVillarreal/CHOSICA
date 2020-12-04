@@ -20,6 +20,7 @@ import pe.edu.upeu.proyecto.entity.Persona;
 @Component
 public class PersonaDaoImpl implements PersonaDao {
 
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	private SimpleJdbcCall simpleJdbcCall;

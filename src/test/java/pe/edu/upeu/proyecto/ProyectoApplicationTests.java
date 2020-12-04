@@ -9,7 +9,7 @@ import pe.edu.upeu.proyecto.dao.Organizacion_PersonaDao;
 import pe.edu.upeu.proyecto.dao.ResolucionDao;
 
 @SpringBootTest
-class ProyectoApplicationTests {
+class ProyectoApplicationTests {	
 	@Autowired
 	//private ResolucionDao resol;
 	//private Historial_OrgDirectivoDao histo;

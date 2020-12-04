@@ -19,6 +19,7 @@ import pe.edu.upeu.proyecto.service.PersonaService;
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
 @RequestMapping("/persona")
+
 public class PersonaController {
 	
 	@Autowired
