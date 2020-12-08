@@ -13,47 +13,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.edu.upeu.proyecto.entity.Persona;
-import pe.edu.upeu.proyecto.service.PersonaService;
+import pe.edu.upeu.proyecto.entity.Estado_Civil;
+import pe.edu.upeu.proyecto.service.Estado_CivilService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/civil")
+public class Estado_CivilController {
 
-public class PersonaController {
-	
 	@Autowired
-	private PersonaService personaService;
+	private Estado_CivilService estado_CivilService;
 	
 	@PostMapping("/add")
 	//este metodo permite registrar una persona
-	public int create(@RequestBody Persona c) {
-		return personaService.create(c);
+	public int create(@RequestBody Estado_Civil estadocivil) {
+		return estado_CivilService.create(estadocivil);
 	}
 
 	@PutMapping("/update/{id}")
 	//este metodo permite modificar una persona
-    public int update(@RequestBody Persona persona,@PathVariable int id) {
-		persona.setIdpersona(id);
+    public int update(@RequestBody Estado_Civil estadocivil,@PathVariable int id) {
+		estadocivil.setId_estcivil(id);
 		
-	return personaService.update(persona);
+	return estado_CivilService.update(estadocivil);
 	}
 	
 	@DeleteMapping("/delete/{id}")
 	//este metodo permite eliminar una persona
 	public int delete(@PathVariable int id) {
-		return personaService.delete(id);
+		return estado_CivilService.delete(id);
 	}	
 	
 	@GetMapping("/listar")
 	//este metodo permite listar todas las personas
 	public Map<String, Object> get(){
-		return personaService.listar();
+		return estado_CivilService.listar();
 	}
 	
 	@GetMapping("/buscar/{id}")
 	//este metodo permite buscar una persona
 	public Map<String, Object> read(@PathVariable int id) {
-		return personaService.buscar(id);
+		return estado_CivilService.buscar(id);
 	}
 }
