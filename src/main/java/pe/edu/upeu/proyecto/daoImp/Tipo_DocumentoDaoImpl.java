@@ -61,7 +61,7 @@ public class Tipo_DocumentoDaoImpl implements Tipo_DocumentoDao {
 	public Map<String, Object> listar() {
 		// TODO Auto-generated method stub
 		
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withCatalogName("PKG_TIPO_DOCUMENTO").withProcedureName("SP_BUS_TIPO_DOCUMENTO")
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withCatalogName("PKG_TIPO_DOCUMENTO").withProcedureName("SP_LIS_TIPO_DOCUMENTO")
 				.declareParameters(new SqlOutParameter("CUR_TIPO_DOCUMENTO", OracleTypes.CURSOR, new ColumnMapRowMapper()));
 		
 		return simpleJdbcCall.execute();
