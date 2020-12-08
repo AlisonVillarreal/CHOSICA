@@ -19,7 +19,7 @@ import pe.edu.upeu.proyecto.service.Solicitud_RequisitosService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-@RequestMapping("/solrequisitos")
+@RequestMapping("/solirequisitos")
 public class Solicitud_RequisitosController {
 	
 	@Autowired

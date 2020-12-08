@@ -18,7 +18,7 @@ import pe.edu.upeu.proyecto.service.Tipo_SolicitudService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/tiposolicitud")
 public class Tipo_SolicitudController {
 	@Autowired
 	private Tipo_SolicitudService tipo_solicitudService;
