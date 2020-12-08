@@ -11,4 +11,5 @@ public interface PersonaDao {
 	int delete (int id);
 	Map<String, Object> buscar(int id);
 	Map<String, Object> listar();
+	
 }
