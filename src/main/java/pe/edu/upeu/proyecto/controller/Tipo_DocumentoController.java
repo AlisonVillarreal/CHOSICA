@@ -18,7 +18,7 @@ import pe.edu.upeu.proyecto.service.Tipo_DocumentoService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-@RequestMapping("/civil")
+@RequestMapping("/tipodocumento")
 public class Tipo_DocumentoController {
 
 	@Autowired
