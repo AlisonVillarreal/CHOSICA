@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.serviceImp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,11 @@ public class CargoServiceImpl implements CargoService{
 		// TODO Auto-generated method stub
 		return cargoDao.listar();
 	}
-
+	
+	@Override
+	public List<Map<String, Object>> listar2() {
+        // TODO Auto-generated method stub
+        return cargoDao.listar2();
+    }
 
 }

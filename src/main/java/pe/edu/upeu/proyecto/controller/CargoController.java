@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,8 @@ public class CargoController {
 		return cargoService.listar();
 	}
 	
-
+	@GetMapping("/all2")
+	public List<Map<String, Object>> listar2(){
+	    return cargoService.listar2();
+	}
 }

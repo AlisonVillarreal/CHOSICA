@@ -1,5 +1,7 @@
 package pe.edu.upeu.proyecto.daoImp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,20 @@ public class CargoDaoImpl implements CargoDao {
 				.declareParameters(new SqlOutParameter("CUR_CARGO", OracleTypes.CURSOR, new ColumnMapRowMapper()));
 				return simpleJdbcCall.execute();
 	} 
+	
+	@Override
+	public List<Map<String, Object>> listar2() {
+		// TODO Auto-generated method stub
+		List<Map<String,Object>> cargo = new ArrayList<>();
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withCatalogName("PKG_CARGO") //nombre del paquete
+				.withProcedureName("SP_LIS_CARGO") //nombre del procedimiento
+				.declareParameters(new SqlOutParameter("CUR_CARGO", OracleTypes.REF_CURSOR, new ColumnMapRowMapper()));	
+				Map<String, Object> map = simpleJdbcCall.execute();
+				cargo.add(map);
+		return cargo;
+	}
+	
 	@Override
 	public int create(Cargo c) {
 		// TODO Auto-generated method stub
