@@ -27,19 +27,19 @@ public class RolesDaoImpl implements RolesDao{
 	@Override
 	public int create(Roles r) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("call PKG_ROLESS.SP_INS_ROLESS(?,?)", r.getNombre(), r.getEstado());
+		return jdbcTemplate.update("call PKG_ROLES.SP_INS_ROLES(?,?)", r.getNombre(), r.getEstado());
 	}
 
 	@Override
 	public int update(Roles r) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("call PKG_ROLESS.SP_UPD_ROLESS(?,?.?)", r.getId_rol(),r.getNombre(),r.getEstado());
+		return jdbcTemplate.update("call PKG_ROLES.SP_UPD_ROLES(?,?.?)", r.getId_rol(),r.getNombre(),r.getEstado());
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("call PKG_ROLESS.SP_DEL_ROLESS(?)", id);
+		return jdbcTemplate.update("call PKG_ROLES.SP_DEL_ROLES(?)", id);
 	}
 
 	@Override
@@ -47,9 +47,9 @@ public class RolesDaoImpl implements RolesDao{
 		// TODO Auto-generated method stub
 		System.out.println(id);
 		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
-				.withCatalogName("PKG_ROLESS")
-				.withProcedureName("SP_BUS_ROLESS")
-				.declareParameters(new SqlOutParameter("CUR_ROLESS", OracleTypes.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_ROL", Types.INTEGER));
+				.withCatalogName("PKG_ROLES")
+				.withProcedureName("SP_BUS_ROLES")
+				.declareParameters(new SqlOutParameter("CUR_ROLES", OracleTypes.CURSOR, new ColumnMapRowMapper()), new SqlParameter("ID_ROL", Types.INTEGER));
 				SqlParameterSource in = new MapSqlParameterSource().addValue("ID_ROL", id);
 				return simpleJdbcCall.execute(in);
 	}
@@ -58,9 +58,9 @@ public class RolesDaoImpl implements RolesDao{
 	public Map<String, Object> readAll() {
 		// TODO Auto-generated method stub
 		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
-				.withCatalogName("PKG_ROLESS") //nombre del paquete
-				.withProcedureName("SP_LIS_ROLESS") //nombre del procedimiento
-				.declareParameters(new SqlOutParameter("CUR_ROLESS", OracleTypes.CURSOR, new ColumnMapRowMapper()));
+				.withCatalogName("PKG_ROLES") //nombre del paquete
+				.withProcedureName("SP_LIS_ROLES") //nombre del procedimiento
+				.declareParameters(new SqlOutParameter("CUR_ROLES", OracleTypes.CURSOR, new ColumnMapRowMapper()));
 				return simpleJdbcCall.execute();
 	}
 
