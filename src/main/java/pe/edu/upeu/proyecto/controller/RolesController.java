@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.edu.upeu.proyecto.entity.Roles;
 import pe.edu.upeu.proyecto.service.RolesService;
 
-
-
 @RestController
 @RequestMapping("/roles")
 public class RolesController {

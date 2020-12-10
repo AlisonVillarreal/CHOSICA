@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,9 @@ public class Tipo_DenominacionController {
 		
 	return tipo_DenominacionService.update(d);
 	}	
-
+	
+	@GetMapping("/listar2")
+	public List<Map<String, Object>> listar2(){
+	    return tipo_DenominacionService.listar2();
+	}
 }

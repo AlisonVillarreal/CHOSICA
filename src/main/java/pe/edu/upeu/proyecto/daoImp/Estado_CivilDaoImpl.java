@@ -1,6 +1,8 @@
 package pe.edu.upeu.proyecto.daoImp;
 
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,4 +68,16 @@ public class Estado_CivilDaoImpl implements Estado_CivilDao {
 		return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public List<Map<String, Object>> listar2() {
+		// TODO Auto-generated method stub
+		List<Map<String,Object>> estadocivil = new ArrayList<>();
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withCatalogName("PKG_ESTADO_CIVIL") //nombre del paquete
+				.withProcedureName("SP_LIS_ESTADO_CIVIL") //nombre del procedimiento
+				.declareParameters(new SqlOutParameter("CUR_ESTADO_CIVIL", OracleTypes.REF_CURSOR, new ColumnMapRowMapper()));	
+				Map<String, Object> map = simpleJdbcCall.execute();
+				estadocivil.add(map);
+		return estadocivil;
+	}
 }

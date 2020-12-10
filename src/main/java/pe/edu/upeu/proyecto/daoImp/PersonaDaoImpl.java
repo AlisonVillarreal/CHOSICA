@@ -1,6 +1,8 @@
 package pe.edu.upeu.proyecto.daoImp;
 
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,4 +72,16 @@ public class PersonaDaoImpl implements PersonaDao {
 		return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public List<Map<String, Object>> listar2() {
+		// TODO Auto-generated method stub
+		List<Map<String,Object>> persona = new ArrayList<>();
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withCatalogName("PKG_PERSONA") //nombre del paquete
+				.withProcedureName("SP_LIS_PERSONA") //nombre del procedimiento
+				.declareParameters(new SqlOutParameter("CUR_PERSONA", OracleTypes.REF_CURSOR, new ColumnMapRowMapper()));	
+				Map<String, Object> map = simpleJdbcCall.execute();
+				persona.add(map);
+		return persona;
+	}
 }

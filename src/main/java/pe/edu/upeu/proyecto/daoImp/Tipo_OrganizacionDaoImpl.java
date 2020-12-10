@@ -1,6 +1,8 @@
 package pe.edu.upeu.proyecto.daoImp;
 
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,4 +65,16 @@ public class Tipo_OrganizacionDaoImpl implements Tipo_OrganizacionDao{
 				return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public List<Map<String, Object>> listar2() {
+		// TODO Auto-generated method stub
+		List<Map<String,Object>> organizacion = new ArrayList<>();
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withCatalogName("PKG_TIPO_ORGANIZACION") //nombre del paquete
+				.withProcedureName("SP_LIS_TIPO_ORGANIZACION") //nombre del procedimiento
+				.declareParameters(new SqlOutParameter("CUR_TIPO_ORGANIZACION", OracleTypes.REF_CURSOR, new ColumnMapRowMapper()));	
+				Map<String, Object> map = simpleJdbcCall.execute();
+				organizacion.add(map);
+		return organizacion;
+	}
 }

@@ -1,6 +1,8 @@
 package pe.edu.upeu.proyecto.daoImp;
 
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,4 +65,16 @@ public class Tipo_DenominacionDaoImpl implements Tipo_DenominacionDao{
 				return simpleJdbcCall.execute();
 	}
 
+	@Override
+	public List<Map<String, Object>> listar2() {
+		// TODO Auto-generated method stub
+		List<Map<String,Object>> denominacion = new ArrayList<>();
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withCatalogName("PKG_TIPO_DENOMINACION") //nombre del paquete
+				.withProcedureName("SP_LIS_TIPO_DENOMINACION") //nombre del procedimiento
+				.declareParameters(new SqlOutParameter("CUR_TIPO_DENOMINACION", OracleTypes.REF_CURSOR, new ColumnMapRowMapper()));	
+				Map<String, Object> map = simpleJdbcCall.execute();
+				denominacion.add(map);
+		return denominacion;
+	}
 }
