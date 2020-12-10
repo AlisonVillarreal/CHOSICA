@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.serviceImp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,35 +15,39 @@ public class Tipo_DenominacionServiceImpl implements Tipo_DenominacionService{
 @Autowired
 	private Tipo_DenominacionDao tipo_DenominacionDao;
 
-@Override
-public int create(Tipo_Denominacion d) {
+	@Override
+	public int create(Tipo_Denominacion d) {
 	// TODO Auto-generated method stub
-	return tipo_DenominacionDao.create(d);
-}
+		return tipo_DenominacionDao.create(d);
+	}
 
-@Override
-public int update(Tipo_Denominacion d) {
+	@Override
+	public int update(Tipo_Denominacion d) {
 	// TODO Auto-generated method stub
-	return tipo_DenominacionDao.update(d);
-}
+		return tipo_DenominacionDao.update(d);
+	}
 
-@Override
-public int delete(int id) {
+	@Override
+	public int delete(int id) {
 	// TODO Auto-generated method stub
-	return tipo_DenominacionDao.delete(id);
-}
+		return tipo_DenominacionDao.delete(id);
+	}
 
-@Override
-public Map<String, Object> read(int id) {
+	@Override
+	public Map<String, Object> read(int id) {
 	// TODO Auto-generated method stub
-	return tipo_DenominacionDao.read(id);
-}
+		return tipo_DenominacionDao.read(id);
+	}
 
-@Override
-public Map<String, Object> readAll() {
+	@Override
+	public Map<String, Object> readAll() {
 	// TODO Auto-generated method stub
-	return tipo_DenominacionDao.readAll();
-}
-
-
+		return tipo_DenominacionDao.readAll();
+	}
+	
+	@Override
+	public List<Map<String, Object>> listar2() {
+        // TODO Auto-generated method stub
+        return tipo_DenominacionDao.listar2();
+    }
 }

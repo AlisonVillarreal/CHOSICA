@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import pe.edu.upeu.proyecto.entity.Estado_Civil;
@@ -11,4 +12,5 @@ public interface Estado_CivilDao {
 	int delete (int id);
 	Map<String, Object> buscar(int id);
 	Map<String, Object> listar();
+	List<Map<String, Object>> listar2();
 }

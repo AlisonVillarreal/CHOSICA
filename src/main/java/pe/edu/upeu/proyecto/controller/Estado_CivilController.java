@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,10 @@ public class Estado_CivilController {
 	//este metodo permite buscar una persona
 	public Map<String, Object> read(@PathVariable int id) {
 		return estado_CivilService.buscar(id);
+	}
+
+	@GetMapping("/listar2")
+	public List<Map<String, Object>> listar2(){
+	    return estado_CivilService.listar2();
 	}
 }
