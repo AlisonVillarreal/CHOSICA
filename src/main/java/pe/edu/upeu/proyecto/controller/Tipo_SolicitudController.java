@@ -18,11 +18,8 @@ import pe.edu.upeu.proyecto.service.Tipo_SolicitudService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-<<<<<<< HEAD
-@RequestMapping("/tiposol")
-=======
 @RequestMapping("/tiposolicitud")
->>>>>>> branch 'master' of https://github.com/AlisonVillarreal/CHOSICA.git
+
 public class Tipo_SolicitudController {
 	@Autowired
 	private Tipo_SolicitudService tipo_solicitudService;

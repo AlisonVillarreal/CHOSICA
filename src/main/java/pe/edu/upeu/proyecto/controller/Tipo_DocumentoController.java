@@ -19,11 +19,8 @@ import pe.edu.upeu.proyecto.service.Tipo_DocumentoService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-<<<<<<< HEAD
-@RequestMapping("/tipodoc")
-=======
 @RequestMapping("/tipodocumento")
->>>>>>> branch 'master' of https://github.com/AlisonVillarreal/CHOSICA.git
+
 public class Tipo_DocumentoController {
 
 	@Autowired
