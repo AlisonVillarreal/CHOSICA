@@ -18,7 +18,7 @@ import pe.edu.upeu.proyecto.service.OrganizacionService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/organizacion")
 public class OrganizacionController {
 	
 	@Autowired
