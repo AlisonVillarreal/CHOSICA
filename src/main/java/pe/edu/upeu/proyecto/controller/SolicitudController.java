@@ -1,6 +1,7 @@
 package pe.edu.upeu.proyecto.controller;
 import  java.util.Map ;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upeu.proyecto.entity.Solicitud;
 import  pe.edu.upeu.proyecto.service.SolicitudService;
+
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/solicitud")
