@@ -1,0 +1,18 @@
+package pe.edu.upeu.proyecto.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import pe.edu.upeu.proyecto.entity.Cargo;
+
+
+
+public interface CargoDao {
+	int create (Cargo c);
+	int update (Cargo c);
+	int delete (int id);
+	Map<String, Object> buscar(int id);
+	Map<String, Object> listar();
+	List<Map<String, Object>> listar2();
+
+}

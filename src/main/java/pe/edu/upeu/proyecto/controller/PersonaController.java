@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import pe.edu.upeu.proyecto.service.PersonaService;
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
 @RequestMapping("/persona")
+
 public class PersonaController {
 	
 	@Autowired
@@ -54,5 +56,10 @@ public class PersonaController {
 	//este metodo permite buscar una persona
 	public Map<String, Object> read(@PathVariable int id) {
 		return personaService.buscar(id);
+	}
+	
+	@GetMapping("/listar2")
+	public List<Map<String, Object>> listar2(){
+	    return personaService.listar2();
 	}
 }

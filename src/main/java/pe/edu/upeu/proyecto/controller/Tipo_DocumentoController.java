@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,11 @@ import pe.edu.upeu.proyecto.service.Tipo_DocumentoService;
 
 @CrossOrigin(origins = "*", allowedHeaders = " ")
 @RestController
+<<<<<<< HEAD
 @RequestMapping("/tipodoc")
+=======
+@RequestMapping("/tipodocumento")
+>>>>>>> branch 'master' of https://github.com/AlisonVillarreal/CHOSICA.git
 public class Tipo_DocumentoController {
 
 	@Autowired
@@ -54,5 +59,10 @@ public class Tipo_DocumentoController {
 	//este metodo permite buscar una persona
 	public Map<String, Object> read(@PathVariable int id) {
 		return documentoService.buscar(id);
+	}
+	
+	@GetMapping("/listar2")
+	public List<Map<String, Object>> listar2(){
+	    return documentoService.listar2();
 	}
 }

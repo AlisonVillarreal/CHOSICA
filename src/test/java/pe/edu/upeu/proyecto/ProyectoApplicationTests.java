@@ -10,14 +10,14 @@ import pe.edu.upeu.proyecto.dao.ResolucionDao;
 
 @SpringBootTest
 class ProyectoApplicationTests {
-	@Autowired
-	//private ResolucionDao resol;
-	//private Historial_OrgDirectivoDao histo;
-	private Organizacion_PersonaDao orgperso;
+    @Autowired
+    //private ResolucionDao resol;
+    //private Historial_OrgDirectivoDao histo;
+    private Organizacion_PersonaDao orgperso;
 
-	@Test
-	void contextLoads() {
-		System.out.println(orgperso.readAll());
-	}
+    @Test
+    void contextLoads() {
+        System.out.println(orgperso.readAll());
+    }
 
 }

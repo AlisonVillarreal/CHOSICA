@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.serviceImp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,11 @@ public class Estado_CivilServiceImpl implements Estado_CivilService {
 		// TODO Auto-generated method stub
 		return estado_CivilDao.listar();
 	}
+	
+	@Override
+	public List<Map<String, Object>> listar2() {
+        // TODO Auto-generated method stub
+        return estado_CivilDao.listar2();
+    }
 
 }

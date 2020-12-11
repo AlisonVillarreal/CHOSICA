@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.serviceImp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,4 +46,9 @@ public class Tipo_DocumentoServiceImpl implements Tipo_DocumentoService {
 		return tipo_DocumentoDao.listar();
 	}
 
+	@Override
+	public List<Map<String, Object>> listar2() {
+        // TODO Auto-generated method stub
+        return tipo_DocumentoDao.listar2();
+    }
 }

@@ -18,6 +18,7 @@ public class Persona {
 	private String correo;
 	private String fallecido;
 	
+	
 	public Persona() {
 		super();
 		// TODO Auto-generated constructor stub

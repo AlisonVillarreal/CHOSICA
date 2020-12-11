@@ -13,7 +13,9 @@ import pe.edu.upeu.proyecto.service.Historial_OrgDirectivoService;
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/HistorialOrgDirectivo")
+
 public class Historial_OrgDirectivoController {
+	
 	@Autowired
 	private Historial_OrgDirectivoService historial_OrgDirectivoService;
 	

@@ -1,5 +1,6 @@
 package pe.edu.upeu.proyecto.serviceImp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ public class PersonaServiceImpl implements PersonaService{
 
 	@Autowired
 	private PersonaDao personaDao;
+	
 	
 	@Override
 	public int create(Persona persona) {
@@ -44,5 +46,11 @@ public class PersonaServiceImpl implements PersonaService{
 		// TODO Auto-generated method stub
 		return personaDao.listar();
 	}
+
+	@Override
+	public List<Map<String, Object>> listar2() {
+        // TODO Auto-generated method stub
+        return personaDao.listar2();
+    }
 
 }
