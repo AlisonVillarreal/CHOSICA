@@ -20,7 +20,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	
 	@Override
 	public int create(Usuario u) {
-		
+		u.setClave(passwordEncoder.encode(u.getClave()));
 		return usuarioDao.create(u);
 	}
 
