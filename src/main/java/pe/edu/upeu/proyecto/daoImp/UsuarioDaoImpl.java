@@ -11,7 +11,6 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
 
@@ -85,7 +84,6 @@ private SimpleJdbcCall simpleJdbcCall;
 		} catch (Exception e) {
 			user = null;
 		}
-		
 		
 		return user; 
 	}
