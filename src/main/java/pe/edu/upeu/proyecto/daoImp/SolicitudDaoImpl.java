@@ -1,5 +1,8 @@
 package pe.edu.upeu.proyecto.daoImp;
 import java.sql.Types;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +16,9 @@ import org.springframework.stereotype.Component;
 
 import oracle.jdbc.OracleTypes;
 import pe.edu.upeu.proyecto.dao.SolicitudDao;
+import pe.edu.upeu.proyecto.entity.Organizacion;
 import pe.edu.upeu.proyecto.entity.Solicitud;
+
 @Component
 public class SolicitudDaoImpl implements SolicitudDao {
 	
@@ -21,10 +26,15 @@ public class SolicitudDaoImpl implements SolicitudDao {
 	private JdbcTemplate jdbcTemplate;
 	private SimpleJdbcCall simpleJdbcCall;
 		@Override
-		public int create(Solicitud s) {
-			return jdbcTemplate.update("call PKG_SOLICITUD.SP_INS_SOLICITUD(?,?,?,?,?,?,?,?)", s.getId_solicitudorg(),
-					s.getId_usuariosol(), s.getId_organizacion(), s.getId_tiposol(), s.getFec_registro(), s.getCodigo_exp(), 
-					s.getObservaciones(), s.getId_solestado());
+		public int create(int id_usuariosol, Organizacion org) {
+			
+			//this.s.getFec_registro() = new SimpleDateFormat("dd-MM-yyyy").format(fecha);
+			//Solicitud soli = new Solicitud();
+			java.util.Date fecha = new Date();
+			String a = new SimpleDateFormat("dd/MM/yyyy").format(fecha);
+			
+			return jdbcTemplate.update("call PKG_SOLICITUD.SP_INS_SOLICITUD(?,?,?,?,?,?,?)", id_usuariosol, a
+					, org.getNombreorg(), org.getNumpartreg(), org.getId_tipodeno(), org.getTotalmiembros(), org.getFec_iniactv());
 		}
 
 		@Override

@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
+
+import pe.edu.upeu.proyecto.entity.Organizacion;
 import pe.edu.upeu.proyecto.entity.Solicitud;
+import pe.edu.upeu.proyecto.entity.Usuario;
 import  pe.edu.upeu.proyecto.service.SolicitudService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -26,8 +30,15 @@ public class SolicitudController {
 	private SolicitudService solicitudService;
 	
 	@PostMapping("/add")
-	public int create(@RequestBody Solicitud s) {
-		return solicitudService.create(s);
+	public int create(@RequestBody String multi) {
+		
+		Gson gson = new Gson();
+		
+		Organizacion organizacion = gson.fromJson(multi, Organizacion.class);
+		Solicitud soli = gson.fromJson(multi, Solicitud.class);
+		
+		return solicitudService.create(soli.getId_usuariosol(), organizacion);
+		
 	}
 	
 	@PutMapping("/update/{id}")

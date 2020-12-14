@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import pe.edu.upeu.proyecto.dao.SolicitudDao;
+import pe.edu.upeu.proyecto.entity.Organizacion;
 import pe.edu.upeu.proyecto.entity.Solicitud;
 import pe.edu.upeu.proyecto.service.SolicitudService;
 @Service
@@ -13,9 +14,9 @@ public class SolicitudServiceImpl  implements SolicitudService{
 @Autowired
 private SolicitudDao solicitudDao;
 @Override
-public int create(Solicitud s) {
+public int create(int id_usuariosol, Organizacion org) {
 	// TODO Auto-generated method stub
-	return solicitudDao.create(s);
+	return solicitudDao.create(id_usuariosol, org);
 }
 
 @Override
