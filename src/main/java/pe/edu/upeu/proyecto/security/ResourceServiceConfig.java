@@ -32,6 +32,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		.and().cors().configurationSource(corsConfigurationSource());
 	}
 	
+	
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration config = new CorsConfiguration();
