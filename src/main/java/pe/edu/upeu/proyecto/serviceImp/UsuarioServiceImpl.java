@@ -76,3 +76,4 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return usuarioDao.getAllUsers();
 	}
 }
+
