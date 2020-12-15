@@ -28,6 +28,7 @@ public class ResourceServiceConfig extends ResourceServerConfigurerAdapter{
 		// TODO Auto-generated method stub
 		http.authorizeRequests()//.antMatchers("/users/**").permitAll()
 		.antMatchers(HttpMethod.POST,"/usuarios/registrosol").permitAll()
+		.antMatchers(HttpMethod.POST,"/archivos/create").permitAll()
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
 	}

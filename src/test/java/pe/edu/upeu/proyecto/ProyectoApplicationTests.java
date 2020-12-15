@@ -21,12 +21,11 @@ class ProyectoApplicationTests {
     @Test
     void contextLoads() {
     	Organizacion org = new Organizacion();
-    	org.setNombreorg("alamos");
+    	org.setNombreorg("Programadores");
     	org.setId_tipodeno(1);
-    	org.setNumpartreg("12315645");
-    	org.setTotalmiembros(150);
-    	org.setFec_iniactv("12/12/2012");
+    	org.setNumpartreg("347837555");
+    	org.setTotalmiembros(153);
+    	org.setFec_iniactv("12/12/2018");
     	solidao.create(23, org);
     }
-
 }
