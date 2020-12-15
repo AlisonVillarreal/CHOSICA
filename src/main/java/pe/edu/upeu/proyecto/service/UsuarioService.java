@@ -15,7 +15,7 @@ public interface UsuarioService {
 	int regUsuario(String clave, Persona p); //Registra el usuario y crea una persona
 	int updUsuario(Usuario u); //Actualiza el usuario trabajador
 	int create(Usuario u); //Crear usuario trabajador
-	
+	int activacion(int id); //Acticación de correo
 	int delete(int id);
 	Usuario read(int id);
 	Usuario read(String nomusuario);

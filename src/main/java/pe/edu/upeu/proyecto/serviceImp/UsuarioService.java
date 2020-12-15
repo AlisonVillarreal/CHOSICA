@@ -30,10 +30,15 @@ public class UsuarioService implements UserDetailsService{
 		
 		Usuario usuario = new Usuario();
 		usuario = usuarioDao.validarUsuario(username);
-		//System.out.println(usuario.getClave());
 		UserDetails details = new User(usuario.getUsuario(),usuario.getClave(),rolDao.buscarRolUser(usuario.getId_usuario()));
-		//System.out.println("respuesta2:" + details.getUsername());
-		return details;
+		System.out.println("paso" + usuario.getCorreo_activacion());	
+		if (usuario.getCorreo_activacion()  == "1" ) {
+			System.out.println(usuario.getCorreo_activacion());	
+		} 
+//		else {
+//			return details = null;
+//		}
+			return details;
 	}
 
 }

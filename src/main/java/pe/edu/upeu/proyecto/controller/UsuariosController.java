@@ -40,7 +40,11 @@ public class UsuariosController {
 		Usuario usuario = gson.fromJson(body, Usuario.class);
 		return usuarioService.create(usuario); //
 	}
-
+	@GetMapping("/activacion/{id}")
+	public int actUsuario(@PathVariable int id) {
+		System.out.println(id);
+		return usuarioService.activacion(id);
+	}
 	@GetMapping("/lista")
 	public List<Map<String, Object>> getAllUsers() {
 		return usuarioService.getAllUsers();
