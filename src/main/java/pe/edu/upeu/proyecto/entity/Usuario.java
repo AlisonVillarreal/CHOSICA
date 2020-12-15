@@ -8,9 +8,12 @@ private String nombre;
 private String usuario;
 private String clave;
 private int estado;
+private String correo_activacion;
 
 
-public Usuario(int id_usuario, int id_rol, int id_persona, String nombre, String usuario, String clave, int estado) {
+
+public Usuario(int id_usuario, int id_rol, int id_persona, String nombre, String usuario, String clave, int estado,
+		String correo_activacion) {
 	super();
 	this.id_usuario = id_usuario;
 	this.id_rol = id_rol;
@@ -19,7 +22,10 @@ public Usuario(int id_usuario, int id_rol, int id_persona, String nombre, String
 	this.usuario = usuario;
 	this.clave = clave;
 	this.estado = estado;
+	this.correo_activacion = correo_activacion;
 }
+
+
 
 public Usuario(int id_usuario, int id_rol, String nombre, String usuario, String clave) {
 	super();
@@ -80,6 +86,15 @@ public String getNombre() {
 
 public void setNombre(String nombre) {
 	this.nombre = nombre;
+}
+public String getCorreo_activacion() {
+	return correo_activacion;
+}
+
+
+
+public void setCorreo_activacion(String correo_activacion) {
+	this.correo_activacion = correo_activacion;
 }
 
 

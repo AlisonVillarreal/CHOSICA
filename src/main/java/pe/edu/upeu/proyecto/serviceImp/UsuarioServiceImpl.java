@@ -75,5 +75,10 @@ public class UsuarioServiceImpl implements UsuarioService{
 		
 		return usuarioDao.getAllUsers();
 	}
+	
+	@Override
+	public int activacion(int id) {
+		return usuarioDao.activacion(id);
+	}
 }
 
