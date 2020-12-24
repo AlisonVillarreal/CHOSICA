@@ -66,7 +66,9 @@ public class PersonaDaoImpl implements PersonaDao {
 	@Override
 	public Map<String, Object> listar() {
 		// TODO Auto-generated method stub
-		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withCatalogName("PKG_PERSONA").withProcedureName("SP_LIS_PERSONA")
+		simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+				.withCatalogName("PKG_PERSONA")
+				.withProcedureName("SP_LIS_PERSONA")
 				.declareParameters(new SqlOutParameter("CUR_PERSONA", OracleTypes.CURSOR, new ColumnMapRowMapper()));
 		
 		return simpleJdbcCall.execute();

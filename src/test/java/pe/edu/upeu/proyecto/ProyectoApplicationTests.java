@@ -28,7 +28,8 @@ import pe.edu.upeu.proyecto.dao.UsuarioDao;
 @SpringBootTest
 class ProyectoApplicationTests {
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+   
+    private ResolucionDao resolucionDao;
     private SimpleJdbcCall simpleJdbcCall;
     //private ResolucionDao resol;
     //private Historial_OrgDirectivoDao histo;
@@ -37,6 +38,7 @@ class ProyectoApplicationTests {
     private AccesoDao accesoDao;
     @Test
     void contextLoads() {
+    	System.out.println(resolucionDao.read(10));
     	//Organizacion org = new Organizacion();
     	//org.setNombreorg("Programadores");
     	//org.setId_tipodeno(1);
@@ -45,17 +47,17 @@ class ProyectoApplicationTests {
     	//org.setFec_iniactv("12/12/2018");
     	//solidao.create(23, org);
     	
-    	List<Map<String, Object>> accesos = new ArrayList<>();
+    	//List<Map<String, Object>> accesos = new ArrayList<>();
     	//accesos = accesoDao.getAccesos(4);
     	//System.out.println(accesos.size());
-    	int id_user = 4;
-		String SQL ="SELECT A.ID_ACCESO, A.NOMBRE, A.URL, A.ICONO "+
-			 	"FROM USUARIOS U " + 
-				"INNER JOIN ROLES_ACCESOS R ON R.ID_ROL = U.ID_ROL " + 
-				"INNER JOIN ACCESO A ON A.ID_ACCESO = R.ID_ACCESO " + 
-				"WHERE U.ID_USUARIO = ? " ;
-		accesos = jdbcTemplate.queryForList(SQL,new Object[] {id_user});
-		System.out.println(accesos);
+    	//int id_user = 4;
+		//String SQL ="SELECT A.ID_ACCESO, A.NOMBRE, A.URL, A.ICONO "+
+			 	//"FROM USUARIOS U " + 
+			//	"INNER JOIN ROLES_ACCESOS R ON R.ID_ROL = U.ID_ROL " + 
+				//"INNER JOIN ACCESO A ON A.ID_ACCESO = R.ID_ACCESO " + 
+				//"WHERE U.ID_USUARIO = ? " ;
+		//accesos = jdbcTemplate.queryForList(SQL,new Object[] {id_user});
+		//System.out.println(accesos);
 		
     }
 }

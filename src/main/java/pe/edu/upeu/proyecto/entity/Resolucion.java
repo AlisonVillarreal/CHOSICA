@@ -8,12 +8,22 @@ public class Resolucion {
 	private int numero;
 	private String fec_inicio;
 	private String fec_fin;
+	private int not_resolucion;
 	public Resolucion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public int getNot_resolucion() {
+		return not_resolucion;
+	}
+
+	public void setNot_resolucion(int not_resolucion) {
+		this.not_resolucion = not_resolucion;
+	}
+
 	public Resolucion(int id_resolucion, int id_organizacion, int id_solicitudorg, int id_usuario_emi, int numero,
-			String fec_inicio, String fec_fin) {
+			String fec_inicio, String fec_fin, int not_resolucion) {
 		super();
 		this.id_resolucion = id_resolucion;
 		this.id_organizacion = id_organizacion;
@@ -22,7 +32,9 @@ public class Resolucion {
 		this.numero = numero;
 		this.fec_inicio = fec_inicio;
 		this.fec_fin = fec_fin;
+		this.not_resolucion = not_resolucion;
 	}
+
 	public int getId_resolucion() {
 		return id_resolucion;
 	}
